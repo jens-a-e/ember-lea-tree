@@ -1,0 +1,14 @@
+Tree root
+<hr>
+<ul>
+  {{#each data as |child|}}
+    {{#if child.type}}
+    {{#component child.type node=child}}
+      {{yield child}}
+    {{/component}}
+    {{else}}
+      nothing here yet
+    {{/if}}
+  {{/each}}
+</ul>
+<hr>

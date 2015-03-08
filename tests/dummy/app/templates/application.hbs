@@ -1,3 +1,5 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">Tree Components for endlessly fascinating tree views in Ember</h2>
 
-{{outlet}}
+{{#tree-root data=model as |node|}}
+  This is a {{node}} {{node.type}} {{node.time}}
+{{/tree-root}}

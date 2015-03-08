@@ -1,0 +1,19 @@
+{{#tree-node}}
+  {{yield node}}
+{{/tree-node}}
+<ul>
+{{#if node.children.isPending}}
+  loading children...
+{{else if node.children.isSettled}}
+  {{node.children.content}}
+  {{#each node.children.content as |child|}}
+    {{#if child.type}}
+    {{#component child.type node=child}}
+      {{yield child}}
+    {{/component}}
+    {{else}}
+      no type set
+    {{/if}}
+  {{/each}}
+{{/if}}
+</ul>
